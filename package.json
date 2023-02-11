@@ -1,0 +1,38 @@
+{
+  "name": "react-text-effect",
+  "license": "MIT",
+  "private": false,
+  "version": "0.0.0",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.module.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "del-cli 'dist/*' && microbundle build --entry src/index.ts --jsx React.createElement --name react-text-effect --css inline",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tinycolor2": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@types/tinycolor2": "^1.4.3",
+    "@vitejs/plugin-react": "^3.1.0",
+    "del-cli": "^5.0.0",
+    "less": "^4.1.3",
+    "microbundle": "^0.15.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
