@@ -10,7 +10,7 @@ export interface TextGlitchInterface extends TextEffectInterface {
 }
 
 export const TextGlitch: FC<TextGlitchInterface> = (props) => {
-	const { text, className } = props;
+	const { text = '', className } = props;
 	const style = useGlitchEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>

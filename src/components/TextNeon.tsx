@@ -8,7 +8,7 @@ export interface TextNeonProps extends TextEffectInterface {
 }
 
 export const TextNeon: FC<TextNeonProps> = (props) => {
-	const { text, className } = props;
+	const { text = '', className } = props;
 	const style = useNeonEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>

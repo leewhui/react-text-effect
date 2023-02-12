@@ -10,7 +10,7 @@ export interface TextSpliceProps extends TextEffectInterface {
 }
 
 export const TextSplice: FC<TextSpliceProps> = (props) => {
-	const { text, className } = props;
+	const { text = '', className } = props;
 	const style = useSpliceEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>
