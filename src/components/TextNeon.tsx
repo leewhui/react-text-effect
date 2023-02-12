@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useNeonEffect } from '../hooks/useNeonEffect';
 import { ColorType, TextEffectInterface } from '../type';
 
@@ -12,7 +12,7 @@ export const TextNeon: FC<TextNeonProps> = (props) => {
 	const style = useNeonEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>
-			{text}
+			{props.children ? props.children : text}
 		</p>
 	);
 };

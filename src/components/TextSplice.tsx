@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useSpliceEffect } from '../hooks/useSpliceEffect';
 import { ColorType, TextEffectInterface } from '../type';
 
@@ -14,7 +14,7 @@ export const TextSplice: FC<TextSpliceProps> = (props) => {
 	const style = useSpliceEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>
-			{text}
+			{props.children ? props.children : text}
 		</p>
 	);
 };

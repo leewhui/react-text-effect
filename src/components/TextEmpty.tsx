@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useEmptyEffect } from '../hooks/useEmptyEffect';
 import { ColorType, TextEffectInterface } from '../type';
 
@@ -12,7 +12,7 @@ export const TextEmpty: FC<TextEmptyProps> = (props) => {
 	const style = useEmptyEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>
-			{text}
+			{props.children ? props.children : text}
 		</p>
 	);
 };

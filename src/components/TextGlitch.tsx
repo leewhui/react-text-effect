@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useGlitchEffect } from '../hooks/useGlitchEffect';
 import { ColorType, TextEffectInterface } from '../type';
 
@@ -14,7 +14,7 @@ export const TextGlitch: FC<TextGlitchInterface> = (props) => {
 	const style = useGlitchEffect(props);
 	return (
 		<p style={{ ...style }} className={className}>
-			{text}
+			{props.children ? props.children : text}
 		</p>
 	);
 };
