@@ -4,5 +4,5 @@ export interface TextEffectInterface {
   text?: string;
   className?: string;
 	children?: React.ReactNode;
-  style?: Object;
+  style?: React.CSSProperties;
 }
