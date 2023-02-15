@@ -8,10 +8,10 @@ export interface TextEmptyProps extends TextEffectInterface {
 }
 
 export const TextEmpty: FC<TextEmptyProps> = (props) => {
-	const { text = '', className } = props;
-	const style = useEmptyEffect(props);
+	const { text = '', className, style } = props;
+	const emptyStyle = useEmptyEffect(props);
 	return (
-		<p style={{ ...style }} className={className}>
+		<p style={{ ...emptyStyle, ...style }} className={className}>
 			{props.children ? props.children : text}
 		</p>
 	);

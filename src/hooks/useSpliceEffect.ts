@@ -1,13 +1,13 @@
 import tinycolor from "tinycolor2";
 import { TextSpliceProps } from "../components/TextSplice";
+import { limitNumberInRange } from "../utils";
 
 export const useSpliceEffect = (effect: TextSpliceProps) => {
   const { direction, stroke, color } = effect;
-  const rete = stroke / 100;
+  const rete = limitNumberInRange(0, 100, stroke) / 100;
   const hex = tinycolor(color).toHex();
   const str = tinycolor(hex).lighten(15).toString();
   const { r, g, b } = tinycolor(str).toRgb();
-  const rgb = tinycolor(color).toRgb();
 
   const offset = effect.offset / 10;
 
@@ -25,7 +25,7 @@ export const useSpliceEffect = (effect: TextSpliceProps) => {
 
   return {
     textShadow: `rgb(${r}, ${g}, ${b}) ${x}px ${y}px 0px`,
-    WebkitTextStroke: `${0.5 + rete * 5}px rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`,
+    WebkitTextStroke: `${0.5 + rete * 5}px`,
     WebkitTextFillColor: 'transparent',
   };
 }

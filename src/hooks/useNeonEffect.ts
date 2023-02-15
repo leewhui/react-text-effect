@@ -1,11 +1,12 @@
 import tinycolor from 'tinycolor2';
 import { TextNeonProps } from '../components/TextNeon';
+import { limitNumberInRange } from '../utils';
 
 export const useNeonEffect = (effect: TextNeonProps) => {
-	const color = effect.color;
+	const { color, strangth } = effect;
 	const { r, g, b } = tinycolor(color).toRgb();
 	const hsv = tinycolor(color).toHsv();
-	const rete = effect.strangth / 100;
+	const rete = limitNumberInRange(0, 100, strangth) / 100;
 	const rgb = [ r, g, b ];
 
 	const calculateFontColor = () => {
